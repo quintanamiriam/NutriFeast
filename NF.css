@@ -19,9 +19,20 @@
   font-size: 30px;
 }
 
-.midSection {
-  /*margin: 0;
-  padding: 0;
-  border: 0;*/
+/*.midSection {
   background-color: #D50303;
+}*/
+
+.rowContainer{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #D50303;
+}
+
+h2.header {
+    margin: 0px;
+}
+
+p.slogan {
+    margin: 0;
 }
