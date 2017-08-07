@@ -1,11 +1,28 @@
+.nav-wrapper{
+  background-color: #D50303;
+}
+
 .parallax-container {
       height: 500px;
 }
 
-/*.section white {
-  height: 1000px;
-}*/
-
 .header{
   text-align: center;
+  font-family: fantasy;
+  font-weight: 400;
+  font-size: 80px;
+  font-color: white;
+}
+
+.slogan {
+  text-align: center;
+  font-family: fantasy;
+  font-size: 30px;
+}
+
+.midSection {
+  /*margin: 0;
+  padding: 0;
+  border: 0;*/
+  background-color: #D50303;
 }
