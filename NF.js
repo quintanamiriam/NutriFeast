@@ -28,8 +28,21 @@ $.ajax({
   url: url,
   dataType: 'json',
   success: function(data) {
+    // console.log(data.hits);
+for (var i = 0; i < data.q.length; i++) {
+  console.log(data.q.hits);
+  var recipeLabel = data.hits[i].recipe.label;
+  var recipeImage = data.hits[i].recipe.image;
+  var recipeIngredientLines = data.hits[i].recipe.ingredientLines;
+  var recipeTotalNutrients = data.hits[i].recipe.totalNutrients;
+  var recipeUrl = data.hits[i].recipe.url;
 
-    console.log(data);
-  }
+  console.log(recipeLabel);
+  console.log(recipeImage);
+  console.log(recipeIngredientLines);
+  console.log(recipeTotalNutrients);
+  console.log(recipeUrl);
+}
+}
 })
 });
