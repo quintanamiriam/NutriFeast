@@ -38,20 +38,21 @@ for (var i = 0; i < data.q.length; i++) {
   var recipeTotalNutrients = data.hits[i].recipe.totalNutrients;
   var recipeUrl = data.hits[i].recipe.url;
 
+
   // console.log(recipeLabel);
   // console.log(recipeImage);
   // console.log(recipeIngredientLines);
   // console.log(recipeTotalNutrients);
   // console.log(recipeUrl);
 $(".recipesField").append(`
-  <div>
+
     <div class="card">
       <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src=${recipeImage}>
+        <img class="activator" style="width: 50%" src=${recipeImage}>
       </div>
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-        <p><a href="#">This is a link</a></p>
+        <p><a target="blank" href=${recipeUrl}>Check out the recipe</a></p>
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
@@ -60,11 +61,13 @@ $(".recipesField").append(`
     </div>
   </div>`)
 
-  // <h1>${recipeLabel}</h1>
-  // <img src=${recipeImage}>
-  // <a
+
 
 }
 }
 })
 });
+// <div>
+// <h1>${recipeLabel}</h1>
+// <img src=${recipeImage}>
+// <a

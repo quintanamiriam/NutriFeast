@@ -47,9 +47,13 @@ p.slogan {
 }
 
 .card {
-  
+width: 400px;
 }
 
+.activator{
+  width:200px; /* you can use % */
+    height: auto;
+}
 .footer {
 
 }
