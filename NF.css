@@ -31,8 +31,25 @@
 
 h2.header {
     margin: 0px;
+    color: white;
 }
 
 p.slogan {
     margin: 0;
+    color: white;
+}
+
+.recipesField {
+  height: 500px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #D50303;
+}
+
+.card {
+  
+}
+
+.footer {
+
 }
