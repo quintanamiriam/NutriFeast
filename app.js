@@ -17,6 +17,7 @@ $('.submit').on('submit', function(event) {
     url: API_URL,
     dataType: 'json',
     success: function(data) {
+      console.log(data);
       var recipes = []
       for (var i = 0; i < data.q.length; i++) {
         recipes.push(data.hits[i])
@@ -27,16 +28,25 @@ $('.submit').on('submit', function(event) {
         var recipeImage = recipes[i].recipe.image;
         var recipeUrl = recipes[i].recipe.url;
         var recipeTotalNutrients = recipes[i].recipe.totalNutrients;
-        // console.log(recipeTotalNutrients);
-console.log(Object.keys(recipeTotalNutrients).length);
-      for (var j = 0; j < Object.keys(recipeTotalNutrients).length; j++){
+// console.log(recipeTotalNutrients);
 
-}
-      //   var nutrients = {label: (), quantity: (), unit: ()};
+const label_name = recipeTotalNutrients[i].label
+const quantity_name = data.hits.recipe.totalNutrients[i].quantity
+const unit_name = data.hits.recipe.totalNutrients[i].unit
+console.log(label_name);
       //
-      // for (var nutrientsList in nutrients) {
-      //   console.log(`nutrients.${nutrientsList} = ${nutrients[nutrientsList]}`);
-      // }
+      // for (var j = 0; j < Object.keys(recipeTotalNutrients)[i].length; j++){
+      //   var nutrients = Object.keys(recipeTotalNutrients)[j]
+// console.log(nutrients)
+//
+// for(var propName in nutrients) {
+//     if(nutrients.hasOwnProperty(propName)) {
+//         var propValue = nutrients[propName];
+//         console.log(propValue)
+//     }
+// }
+
+// }
 
 
         $(".recipesField").append(`
