@@ -21,12 +21,22 @@ $('.submit').on('submit', function(event) {
       for (var i = 0; i < data.q.length; i++) {
         recipes.push(data.hits[i])
       }
-
-      for (var i = 0; i < recipes.length; i++) {
+// console.log(recipes);
+      for (var i = 0; i < Object.keys(recipes).length; i++) {
         var recipeLabel = recipes[i].recipe.label;
         var recipeImage = recipes[i].recipe.image;
         var recipeUrl = recipes[i].recipe.url;
+        var recipeTotalNutrients = recipes[i].recipe.totalNutrients;
+        // console.log(recipeTotalNutrients);
+console.log(Object.keys(recipeTotalNutrients).length);
+      for (var j = 0; j < Object.keys(recipeTotalNutrients).length; j++){
 
+}
+      //   var nutrients = {label: (), quantity: (), unit: ()};
+      //
+      // for (var nutrientsList in nutrients) {
+      //   console.log(`nutrients.${nutrientsList} = ${nutrients[nutrientsList]}`);
+      // }
 
 
         $(".recipesField").append(`
