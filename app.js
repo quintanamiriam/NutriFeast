@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $(".button-collapse").sideNav();
-  $('.parallax').parallax();
+  $(".parallax").parallax();
 });
 
 var API = "https://api.edamam.com/search?q="
@@ -17,37 +17,47 @@ $('.submit').on('submit', function(event) {
     url: API_URL,
     dataType: 'json',
     success: function(data) {
-      console.log(data);
+      // console.log(data);
       var recipes = []
       for (var i = 0; i < data.q.length; i++) {
         recipes.push(data.hits[i])
       }
-// console.log(recipes);
+// console.log(recipes)
       for (var i = 0; i < Object.keys(recipes).length; i++) {
         var recipeLabel = recipes[i].recipe.label;
         var recipeImage = recipes[i].recipe.image;
         var recipeUrl = recipes[i].recipe.url;
-        var recipeTotalNutrients = recipes[i].recipe.totalNutrients;
-// console.log(recipeTotalNutrients);
+        var recipeYield = recipes[i].recipe.yield;
+        var recipeDietLables = recipes[i].recipe.dietLabels[0];
+        var recipeTotalNutrients = [];
+               const name = data.hits[i].recipe.totalNutrients;
+               const rec = data.hits[i];
+               for (var key in name) {
+                 recipeTotalNutrients.push((name[key].label + " " + Math.round(name[key].quantity) + " " + name[key].unit + '<br>'));
+               }
 
-const label_name = recipeTotalNutrients[i].label
-const quantity_name = data.hits.recipe.totalNutrients[i].quantity
-const unit_name = data.hits.recipe.totalNutrients[i].unit
-console.log(label_name);
+
+
       //
-      // for (var j = 0; j < Object.keys(recipeTotalNutrients)[i].length; j++){
-      //   var nutrients = Object.keys(recipeTotalNutrients)[j]
-// console.log(nutrients)
+      //
+      //
+      //   var ingredients = []
+      //   var ingredientLines = recipes[i].recipe.ingredientLines;
+      // for (var j = 0; j < Object.keys(ingredients).length; j++) {
+      //   ingredients.push(ingredientLines[i])
+      // }
+
+// ____________________________________________________________________________________________
+//       var ingredients = []
+//       for (var j = 0; j < recipeIngredientLines.length; j++) {
+//         ingredients.push('<span>' + recipeIngredientLines[i] + '</span>')
+//       }
+//       $(".element").html(ingredients.join(""));
 //
-// for(var propName in nutrients) {
-//     if(nutrients.hasOwnProperty(propName)) {
-//         var propValue = nutrients[propName];
-//         console.log(propValue)
-//     }
-// }
-
-// }
-
+//       console.log(ingredients);
+//
+//       var ingredients = [recipeIngredientLines];
+// console.log(Object.keys(ingredients));
 
         $(".recipesField").append(`
             <div class="card">
@@ -60,7 +70,7 @@ console.log(label_name);
               </div>
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">${recipeLabel}<i class="material-icons right">close</i></span>
-                <p>${recipeTotalNutrients}.</p>
+                <p>Recipe Yield: ${recipeYield} <br> <br> Diet Label: ${recipeDietLables} <br> <br> Nutritional Values: <br> ${recipeTotalNutrients.join("")}<p>
               </div>
             </div>
           </div>`)

@@ -62,12 +62,12 @@ p.slogan {
     color: white;
 }
 
-/*.recipesField {
-  height: 500px;
+.recipesField {
+  /*height: 500px;
   padding-top: 60px;
   padding-bottom: 60px;
-  background-color: #D50303;
-}*/
+  background-color: #D50303;*/
+}
 
 .card {
 width: 400px;
